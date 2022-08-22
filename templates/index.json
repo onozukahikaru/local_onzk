@@ -221,7 +221,7 @@
       "type": "custom_slider",
       "settings": {
         "logo_img": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
-        "comment_p": "<p>コメント<\/p>",
+        "comment_p": "<p>コメント2<\/p>",
         "btn_link": "shopify:\/\/pages\/contact",
         "btn_text": "button"
       }
