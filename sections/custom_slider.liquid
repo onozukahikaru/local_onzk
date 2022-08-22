@@ -152,12 +152,6 @@ height:auto!important;
 
 {% javascript %}
   $(document).on('ready', function() {
-  $(".slider")
-  .on("init", function (event, slick) {
-    $(this).append('<div class="slick-num"><span class="now-count"></span> / <span class="all-count"></span></div>');
-    $(".now-count").text(slick.currentSlide + 1); 
-    $(".all-count").text(slick.slideCount);
-  })
   .slick({
       autoplay: true,  
       autoplaySpeed: 1000,
@@ -167,8 +161,5 @@ height:auto!important;
       infinite: true,
       pauseOnHover: false,
   })
-  .on("beforeChange", function (event, slick, currentSlide, nextSlide) {
-    $(".now-count").text(nextSlide + 1); 
-  });
 });
 {% endjavascript %}
