@@ -1,8 +1,58 @@
+<div id="add-sec02" class="Staff">
+  {%- if section.settings.title != blank -%}
+  <p>{{ section.settings.title }}</p>
+  {%- else -%}
+  <p>スタッフ紹介</p>
+  {%- endif -%}
+  <ul>
+    {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+    <li><span><img src="{{ block.settings.img | img_url: '150x150'}}" alt=""></span><span>{{ block.settings.name }}</span></li>
+    {% endfor %}
+    {%- else -%}
+    <li><span><img src="https://placehold.jp/150x150.png" alt=""></span><span>山田</span></li>
+    <li><span><img src="https://placehold.jp/150x150.png" alt=""></span><span>山田</span></li>
+    <li><span><img src="https://placehold.jp/150x150.png" alt=""></span><span>山田</span></li>
+    {%- endif -%}
+  </ul>
+  <!-- /.Staff -->
+</div>
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+ {
+"name": "スタッフ紹介",
+"presets": [
+{
+"category": "Custom Content",
+"name": "スタッフ紹介"
+}
+],
+"settings": [
+{
+"id": "title",
+"type": "textarea",
+"label": "タイトル",
+"placeholder": "タイトル"
+}
+],
+"blocks": [
+{
+"type": "select",
+"name": "スタッフを追加する",
+"settings": [
+{
+"id": "img",
+"type": "image_picker",
+"label": "スタッフ画像（正方形）"
+},
+{
+"id": "name",
+"type": "textarea",
+"label": "スタッフ名"
+}
+]
+}
+]
+}
 {% endschema %}
 
 {% stylesheet %}
