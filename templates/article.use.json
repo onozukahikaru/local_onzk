@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "3725f264-17eb-4f0e-bb9d-3e8efa66f659": {
+      "type": "title_productdetail_dmm",
+      "settings": {
+        "image_pc": "shopify:\/\/shop_images\/use_pc.png",
+        "image_sp": "shopify:\/\/shop_images\/title_howto_pc.png",
+        "url": "shopify:\/\/blogs\/use"
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": false,
+            "blog_show_author": false
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "content"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "3725f264-17eb-4f0e-bb9d-3e8efa66f659",
+    "main"
+  ]
+}

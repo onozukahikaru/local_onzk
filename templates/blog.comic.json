@@ -1,0 +1,38 @@
+{
+  "sections": {
+    "be00d117-a3cf-4d7d-8586-7468bad122fa": {
+      "type": "title_comic_dmm",
+      "settings": {
+        "image_pc": "shopify:\/\/shop_images\/title_comic_pc.png",
+        "image_sp": "shopify:\/\/shop_images\/title_comic_sp.png"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": false,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "165974980600a83640": {
+      "type": "news-list",
+      "disabled": true,
+      "settings": {
+        "news_list": "",
+        "post_limit": 3,
+        "news_list_date": true,
+        "news_list_category": true
+      }
+    }
+  },
+  "order": [
+    "be00d117-a3cf-4d7d-8586-7468bad122fa",
+    "main",
+    "165974980600a83640"
+  ]
+}

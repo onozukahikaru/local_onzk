@@ -1,5 +1,12 @@
 {
   "sections": {
+    "ee5103f5-f4a0-461d-b694-2675ce4ff2bd": {
+      "type": "title_selectkit_dmm",
+      "settings": {
+        "image_pc": "shopify:\/\/shop_images\/title_select_pc.png",
+        "image_sp": "shopify:\/\/shop_images\/title_select_sp.png"
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "settings": {
@@ -17,8 +24,10 @@
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
+        "enable_quick_add": false,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
@@ -26,6 +35,7 @@
     }
   },
   "order": [
+    "ee5103f5-f4a0-461d-b694-2675ce4ff2bd",
     "banner",
     "product-grid"
   ]

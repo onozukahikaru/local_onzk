@@ -1,0 +1,422 @@
+{
+  "sections": {
+    "90b74918-751e-4cc8-8b68-26e15958b740": {
+      "type": "title_faq_dmm",
+      "settings": {
+        "image_pc": "shopify:\/\/shop_images\/title_faq_pc.png",
+        "image_sp": "shopify:\/\/shop_images\/title_faq.png"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "6da1d1a7-9810-4e51-ac9b-73202c564a5b": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"faq_fukidashi\"><div class=\"fulidashi_inner\">検査をするのが<strong>初めての人<\/strong>も<br class=\"sp\"\/>\n検査を<strong>したことがある人<\/strong>も<br\/>\nわからないことがあったら<br class=\"sp\"\/>\nまずこのページを見てね<\/div><\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 24
+      }
+    },
+    "14d82849-cd3f-4d64-a356-2f45cc57d559": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<ul class=\"category-linklist sp\">\n  <li class=\"category-1 linkitem\"><a href=\"#link_01\" class=\"smooth\">お支払いについて<\/a><\/li>\n  <li class=\"category-2 linkitem\"><a href=\"#link_02\" class=\"smooth\">郵送検査の秘匿性について<\/a><\/li>\n  <li class=\"category-3 linkitem\"><a href=\"#link_03\" class=\"smooth\">検査キットの受け取りについて<\/a><\/li>\n  <li class=\"category-4 linkitem\"><a href=\"#link_04\" class=\"smooth\">検査キットのご利用について<\/a><\/li>\n  <li class=\"category-5 linkitem\"><a href=\"#link_05\" class=\"smooth\">検査物の返送について<\/a><\/li>\n  <li class=\"category-6 linkitem\"><a href=\"#link_06\" class=\"smooth\">検査結果について<\/a><\/li>\n  <li class=\"category-7 linkitem\"><a href=\"#link_07\" class=\"smooth\">病気や検査の悩みについて<\/a><\/li>\n<\/ul>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "ea2da72c-0a7e-4c50-8ae0-7a61902759c8": {
+      "type": "faq_multicolumn_dmm",
+      "blocks": {
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-0": {
+          "type": "column",
+          "settings": {
+            "class": "image_01",
+            "linkid": "link_01",
+            "select_tag": "category-1",
+            "title": "どのような支払い方法がありますか？",
+            "image": "shopify:\/\/shop_images\/payment.png",
+            "text": "<p>クレジットカード決済・キャリア決済・コンビニ決済・ウォレット決済（paypay 楽天ペイ）の4通りのお支払い方法があります。※キャリア・コンビニは順次対応予定<\/p><p>※キャリア決済・コンビニ決済・ウォレット決済は、定期便が利用できません<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-1": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-1",
+            "title": "検査キットの購入代金以外にかかる料金はありますか。",
+            "text": "<p>検査キット代金には、検査料、検査物ご提出時の送料、検査結果報告書郵送料などがすべて含まれております。<br\/><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-2": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-1",
+            "title": "送料について教えてください。",
+            "text": "<p>送料は400円（全国一律）ですが期間限定で送料無料となります<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "40e69357-1ce3-413f-ab75-8334a6ab0744": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_02",
+            "select_tag": "category-2",
+            "title": "検査は匿名でも受けられますか？",
+            "text": "<p>はい、匿名でも検査ができます。<br\/><strong>検査結果報告書の郵送が不要な場合、匿名でも検査が受けられます。<\/strong><br\/>検査申込書と検査物には、ニックネーム等をご記入ください。<br\/>その際ご記入いただいたニックネーム等が検査受診者欄に記載されます。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1af358f4-b573-48d1-ae67-22b9ed49c2ae": {
+          "type": "column",
+          "settings": {
+            "class": "image_02",
+            "linkid": "link_",
+            "select_tag": "category-2",
+            "title": "宅急便の配達者にも中身が何か知られたくないのですが・・・",
+            "image": "shopify:\/\/shop_images\/deliver.png",
+            "text": "<p>荷姿からも伝票からも、もちろん中身は分かりません。<br\/>お届け時の外装はヤマト<br\/>運輸のBOXあるいは<br\/>ネコポス白封筒や無地の<br\/>段ボールなどで中身は<br\/>見えません。<br\/><strong>宅急便伝票の品名欄には<br\/>【日用品（プラスチック<br\/>容器】<\/strong>と記載して<br\/>お送りいたします。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "3c6dcf21-bb89-477f-9c91-a6f0edb72902": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-2",
+            "title": "検査キットを注文した後、自宅にダイレクトメールなど届くと困るのですが。",
+            "text": "<p>DMなどは一切お送りいたしませんのでご安心ください。<br\/><strong>ご自宅に宣伝の郵便物などをお送りすることは絶対にございません。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "e3f5c954-a1eb-43d2-ba46-c101193f6c05": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_03",
+            "select_tag": "category-3",
+            "title": "検査キットの荷物の追跡番号はわかりますか。",
+            "text": "<p>ヤマト運輸　クロネコメンバーズにご登録頂く事で配荷状況が確認できます。<br\/>クロネコメンバーズへの事前登録をお願い致します。<\/p>",
+            "link_label": "詳しくはこちら",
+            "link": "https:\/\/auth.kms.kuronekoyamato.co.jp\/auth\/login"
+          }
+        },
+        "1ef4e229-f61a-477c-b1e3-ce1142a650bd": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-3",
+            "title": "自宅以外で受け取りたいのですが…",
+            "text": "<p><strong>ヤマト運輸　クロネコメンバーズ事前登録で自宅以外のご都合のよい受け取り場所に変更できます。<\/strong><br\/>受け取り場所を、ヤマト運輸直営店や街の宅配便ロッカー（PUDOステーション）<br\/>、コンビニ、自宅宅配ロッカーなどを指定すれば、ご自宅で待つことなく受け取れます。​<br\/><\/p>",
+            "link_label": "詳しくはこちら",
+            "link": "https:\/\/www.kuronekoyamato.co.jp\/ytc\/customer\/redelivery\/change\/place\/"
+          }
+        },
+        "ec1d0d2e-a2d3-4303-ad78-de7be5fe66f5": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_04",
+            "select_tag": "category-4",
+            "title": "自分で検査物を採取するのは難しくないですか？",
+            "text": "<p>ご自身で、尿、腟分泌液、血液などの検査物を採取していただきます。<br\/>分かりやすい丁寧な図解入りの説明書が付いておりますので「意外と簡単だった」とおっしゃる方がほとんどです。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "deaa82f7-ab47-4271-a610-9de76a09c3ac": {
+          "type": "column",
+          "settings": {
+            "class": "image_03",
+            "linkid": "link_",
+            "select_tag": "category-4",
+            "title": "採血は、痛くないですか？",
+            "image": "shopify:\/\/shop_images\/girl.png",
+            "text": "<p>チクッとする程度、と<\/p><p>感じる方が多いようです。<\/p><p>痛みの感じ方に個人差<\/p><p>がありますので一概に<\/p><p>は言えませんが、チ<\/p><p>クッとする程度で<\/p><p>「思ったより痛くな<\/p><p>かった」という感想が<\/p><p>ほとんどです。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "c45bf4c0-baac-413d-a2a8-91b580b1b45d": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-4",
+            "title": "検査物を採取する時間は決まっていますか？",
+            "text": "<p>ご都合の良い時に採取してください。<strong>（以下の注意事項はご確認ください。）<\/strong><br\/>例えば健康診断の尿検査のように朝一番の尿を採取してくださいといった決まりはございません。検査物を摂取する時間帯によって検査結果が変わることはございませんので、以下の注意事項に従い、ご都合のよろしい時に採取してください。<br\/><br\/><strong>【採取のタイミングに関する注意事項】<br\/>・尿を検体とする検査項目では、前回の排尿から１時間以上経過してから検体を採取してください。<br\/>・性行為直後の性器からの検体採取は控えてください。<br\/>・女性の方は、生理の期間中の検体採取は控えてください。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "9a95456d-1479-4051-8fc3-9b3ff73bc2da": {
+          "type": "column",
+          "settings": {
+            "class": "image_04",
+            "linkid": "link_",
+            "select_tag": "category-4",
+            "title": "血液が少ししか採取できませんでした。このまま検体をポストに投函しても大丈夫ですか？",
+            "image": "shopify:\/\/shop_images\/post.png",
+            "text": "<p>まずは採血状況をお知らせください。足りないと思われる場合には再採取キットを無料で郵送いたします。<br\/><strong>採血量が規定に達していない場合、適切な検査が行なえません。<\/strong><br\/>お客様の採血状況や、その他の検査物の採取状況をお聞きしながら対応をさせていただきますので、お手数をお掛け致しますが検体を投函する前に<br\/>コールセンター<br\/><a href=\"tel:0120890964\" target=\"_blank\" title=\"tel:0120890964\">0120890964<\/a>まで<br\/>ご連絡ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "a78faba2-194c-4075-ab80-84672f0c2890": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-4",
+            "title": "検体の採取を失敗してしまいました。採り直しのキットを送ってもらえますか？",
+            "text": "<p>再採取キットを無料で郵送いたしますのでお申し付けください。<br\/><strong>万が一、採取を失敗してしまったら採り直し用キットを無料でお送りいたします。<\/strong>検体をポストに投函する前にコールセンター <a href=\"tel:0120890964\" target=\"_blank\" title=\"tel:0120890964\">0120890964<\/a>までご連絡ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "3752f3c8-9f7e-4d9c-a1f1-641ebdf77557": {
+          "type": "column",
+          "settings": {
+            "class": "image_05",
+            "linkid": "link_05",
+            "select_tag": "category-5",
+            "title": "検査物はどのように送ったら良いのですか？",
+            "image": "shopify:\/\/shop_images\/paper.png",
+            "text": "<p>切手不要の付属の封筒でお<\/p><p>送りください。<br\/>採取した検査物は、検査キッ<\/p><p>トに同梱されている料金受<\/p><p>取人払い封筒を使用して<br\/>ご返送ください。切手は不要<\/p><p>ですので、そのままポストに<\/p><p>投函してください。<br\/><strong>検査申込書などを忘れずに<\/strong><\/p><p><strong>同封してください。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "aa8e41b1-ce97-4241-8b01-755fd2ad34fa": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "返送する際に検査申込書を入れ忘れてしまいました。",
+            "text": "<p>コールセンターにご連絡ください。<br\/>検査結果のご報告に遅れが生じる可能性がございますので、検査申込書を封入し忘れてしまった場合にはコールセンター <a href=\"tel:0120890964\" target=\"_blank\" title=\"tel:0120890964\">0120890964<\/a> までご連絡ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "4b820934-d8c9-44c6-841e-700eac7e69de": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "検査キットの検査項目を分けて返送してもいいですか？",
+            "text": "<p>検体はまとめてご提出ください。<br\/>検査物を複数回に分けてご返送いただくことはご遠慮いただいております。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "9b9844ab-180b-4937-a8e6-3d17faea9da3": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "検査申込書の記入は必要ですか？",
+            "text": "<p>必要事項を必ずご記入ください。<br\/>検査申込書は、検査する際、また結果報告の際に必要となります。<br\/><strong>ご記入の上、検体と一緒にご返送ください。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "95f9a6a1-6dc5-4b43-a2ed-887e7daf55cb": {
+          "type": "column",
+          "settings": {
+            "class": "image_06",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "検体を速達で返送しても大丈夫ですか？",
+            "image": "shopify:\/\/shop_images\/express.png",
+            "text": "<p>速達での返送も承ります。（速達分の追加料金はご負担ください。）<br\/>検査を少しでも早く、とお望みの場合、速達でご返送いただくことも可能です。<br\/>なお、<strong>速達分の追加料金（+280円）は、お客様負担となります。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "406201de-d843-4830-a6c3-981dbd0f38f4": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "検体を宅配便などで返送してもよろしいですか？",
+            "text": "<p>宅急便をご利用の際は<strong>必ず『午前中』到着指定<\/strong>でお送りください。宅急便をご利用の際は、検査物受付業務の関係上、必ず「午前中」到着指定でご発送ください。なお、<strong>配達料は、お客様ご負担となります。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "47757696-0baf-4004-8f19-cc9c2e9f56f7": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-5",
+            "title": "検査キットの使用期限や返送期限はありますか。",
+            "text": "<p>使用期限がございますので期限内に使用してください。<br\/>検査キットは、<strong>ご注文いただいた日より３ヶ月以内にご使用ください。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "d91911aa-26e5-4230-8c04-30d6223a8565": {
+          "type": "column",
+          "settings": {
+            "class": "image_07",
+            "linkid": "link_06",
+            "select_tag": "category-6",
+            "title": "検査結果はどのように確認できますか？",
+            "image": "shopify:\/\/shop_images\/laptop.png",
+            "text": "<p>検査結果はWebでご覧いただけます。閲覧の際は、<strong>キットに同梱しておりますユーザーIDとパスワードが必要となります。<\/strong><br\/>検査結果確認方法についてはこちらをご参照ください​。<\/p><p><\/p><p><a href=\"https:\/\/codingood.info\/about\/how_to_confirmation_method\" target=\"_blank\" title=\"https:\/\/codingood.info\/about\/how_to_confirmation_method\">詳しくはこちら<\/a><\/p><p><\/p><p>また、ご希望の方には検査結果報告書の郵送も承ります。検査申込書の該当欄にご記入ください。<br\/>報告郵送をご希望の際は、<strong>検査申込書に郵便物の配達が可能な氏名をお書きください。<\/strong><br\/>ニックネーム等では郵便物が返戻となってしまいお手元に届きませんのでご注意ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "592355d8-bddc-4615-9cba-dfad24515b90": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-6",
+            "title": "検査で陽性の項目があった場合、公的機関に通報されたりしますか。",
+            "text": "<p>一切ございません。<br\/>病院などでは、診断をした場合、報告の義務がある疾患もありますが、<strong>検査の結果だけでは保健所等の公的機関に報告することは一切ございません<\/strong>のでご安心ください。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "37371985-3bf9-4a4a-aebb-55e0deafc865": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-6",
+            "title": "検体を投函してから、何日ぐらいで検査結果がわかりますか？",
+            "text": "<p>性感染症の検査では、通常ですと検体が当所に届いてから中１営業日後の午後にWEBでご報告となります。ただし、検体によっては再検査が必要となり余計にお日にちを頂戴することもございますのでご了承ください。<br\/>ポスト投函から弊社に検体が届くまでの日数は地域により異なりますが、郵便局でお引き受けされた後、翌日から３日程度のケースが多いようです。<strong>検査項目によって所要日数が異なります。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "6a33eeec-77da-47ff-92a1-a114f2acd915": {
+          "type": "column",
+          "settings": {
+            "class": "image_08",
+            "linkid": "link_07",
+            "select_tag": "category-7",
+            "title": "症状が無ければ、性感染症の検査はしなくてもいいですか？",
+            "image": "shopify:\/\/shop_images\/check.png",
+            "text": "<p>症状が無くても感染しているケースが増えています。<br\/>性感染症は、自覚症状がほとんどないケースも多く、ご自身の感染に気が付かずに過ごしている方が相当数存在しているのではないかと推測されています。<br\/>自覚症状が出たときには、病気が進行して<br\/>しまっている、あるいはパートナーに知ら<br\/>ぬ間に感染させて<br\/>しまうといった<br\/>リスクもあります。<br\/><strong>感染のリスクが思い<br\/>当たる場合、迷わずに<br\/>検査を受けることを<br\/>お勧めいたします。<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "ec14bc05-c641-41ba-9f47-05189451c1d4": {
+          "type": "column",
+          "settings": {
+            "class": "image_09",
+            "linkid": "link_",
+            "select_tag": "category-7",
+            "title": "検査キットについての質問はできますか？",
+            "image": "shopify:\/\/shop_images\/ask.png",
+            "text": "<p>当所のコールセンター<a href=\"tel:0120890964\" target=\"_blank\" title=\"tel:0120890964\">0120890964<\/a>までお気軽にお問い合わせください。携帯電話からもご利用いただけます。<br\/>キットご購入前のご相談から、検査についてのご質問など、専門相談員が親切丁寧にご対応いたします。<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "20914f7b-7b31-4e35-80b8-06833aa0274b": {
+          "type": "column",
+          "settings": {
+            "class": "image_",
+            "linkid": "link_",
+            "select_tag": "category-7",
+            "title": "検査が陽性だった場合、病院を紹介してもらうことはできますか？",
+            "text": "<p>性器咽頭クラミジア・カンジダ・性器ヘルペス・トリコモナス・マイコプラズマ・ウレアプラズマに関してはDMMオンラインクリニックにてオンライン診療処方が可能です。<br\/><br\/>その他感染症に関しては、早期治癒をバックアップしてくれる協力医療機関が全国にございます。<br\/>協力医療機関様は下記ページ内から検索していただけます。<br\/>また、ホームページには掲載していない協力医療機関様もございますので、コールセンター<a href=\"tel:0120890964\" target=\"_blank\" title=\"tel:0120890964\">0120890964<\/a>でもご案内いたしております。協力医療機関様での受診の際は、必ず当所の検査結果報告書をご持参ください。<\/p>",
+            "link_label": "詳しくはこちら",
+            "link": "https:\/\/medical-core.net\/web\/search_all\/"
+          }
+        }
+      },
+      "block_order": [
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-0",
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-1",
+        "template--16394143858915__ea2da72c-0a7e-4c50-8ae0-7a61902759c8-1665561586aa23ca09-2",
+        "40e69357-1ce3-413f-ab75-8334a6ab0744",
+        "1af358f4-b573-48d1-ae67-22b9ed49c2ae",
+        "3c6dcf21-bb89-477f-9c91-a6f0edb72902",
+        "e3f5c954-a1eb-43d2-ba46-c101193f6c05",
+        "1ef4e229-f61a-477c-b1e3-ce1142a650bd",
+        "ec1d0d2e-a2d3-4303-ad78-de7be5fe66f5",
+        "deaa82f7-ab47-4271-a610-9de76a09c3ac",
+        "c45bf4c0-baac-413d-a2a8-91b580b1b45d",
+        "9a95456d-1479-4051-8fc3-9b3ff73bc2da",
+        "a78faba2-194c-4075-ab80-84672f0c2890",
+        "3752f3c8-9f7e-4d9c-a1f1-641ebdf77557",
+        "aa8e41b1-ce97-4241-8b01-755fd2ad34fa",
+        "4b820934-d8c9-44c6-841e-700eac7e69de",
+        "9b9844ab-180b-4937-a8e6-3d17faea9da3",
+        "95f9a6a1-6dc5-4b43-a2ed-887e7daf55cb",
+        "406201de-d843-4830-a6c3-981dbd0f38f4",
+        "47757696-0baf-4004-8f19-cc9c2e9f56f7",
+        "d91911aa-26e5-4230-8c04-30d6223a8565",
+        "592355d8-bddc-4615-9cba-dfad24515b90",
+        "37371985-3bf9-4a4a-aebb-55e0deafc865",
+        "6a33eeec-77da-47ff-92a1-a114f2acd915",
+        "ec14bc05-c641-41ba-9f47-05189451c1d4",
+        "20914f7b-7b31-4e35-80b8-06833aa0274b"
+      ],
+      "settings": {
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "d3e13b09-0e5f-449d-bcb6-220db3f17f7f": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "90b74918-751e-4cc8-8b68-26e15958b740",
+    "main",
+    "6da1d1a7-9810-4e51-ac9b-73202c564a5b",
+    "14d82849-cd3f-4d64-a356-2f45cc57d559",
+    "ea2da72c-0a7e-4c50-8ae0-7a61902759c8",
+    "d3e13b09-0e5f-449d-bcb6-220db3f17f7f"
+  ]
+}

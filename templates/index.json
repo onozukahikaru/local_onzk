@@ -1,240 +1,169 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "16626248480bc090e5": {
+      "type": "mainvisual_dmm",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/mv_title.png",
+        "image_2": "shopify:\/\/shop_images\/mv_title_sp.png"
+      }
+    },
+    "1662961235e9234cea": {
+      "type": "challenge_dmm",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
+        "16629612351b51c195-1": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text_1": "<p><strong>DMMLuna<\/strong>は<\/p><p>スマホのかんたん<\/p><p>オンライン検査で<\/p><p>女性の方へ「安心と安全」<\/p><p>をお届けします。<\/p>",
+            "text_2": "<p><strong>DMM Luna<\/strong> の新しい挑戦<\/p>",
+            "text_3": "<p><strong>- ひとつひとつ、大切に。<\/strong><\/p><p><strong>迅速に確かな検査を、もっとかんたんに<\/strong><\/p><p>気軽に外出できない方や通院時間がない方でも、<\/p><p>スキマ時間でスマホ１つでオンライン検査！<br\/>陽性でも結果データをもとにオンライン診療、在宅治療が可能です。全ての女性に医療を通じて「安心・安全」をお届けさせて頂きます。<br\/>※オンライン診療で治療が出来ない性感染症もあります。<\/p>"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "16629612351b51c195-1"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "image": "shopify:\/\/shop_images\/slidemotion.png"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "16624467547b50cd63": {
+      "type": "ranking_dmm",
+      "settings": {
+        "image_box1": "shopify:\/\/shop_images\/title_ranking_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_ranking_sp.png",
+        "collection": "ranking",
+        "products_to_show": 5
+      }
+    },
+    "1662452345e4fa5249": {
+      "type": "lunakit_dmm",
+      "settings": {
+        "image_box1": "shopify:\/\/shop_images\/title_lunakit_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_lunakit_sp.png",
+        "description": "<p>自宅でできる「安心・安全」な検査キットをオンラインで購入できます。<\/p><p>ここにない組み合わせにご希望があれば<a href=\"https:\/\/lin.ee\/JWZ9a0j\" target=\"_blank\" title=\"https:\/\/lin.ee\/JWZ9a0j\">公式LINE<\/a>よりお問い合わせください♫<\/p>",
+        "collection": "kit",
+        "products_to_show": 4,
+        "show_view_all": true
+      }
+    },
+    "1663738202616368fa": {
+      "type": "howto_dmm",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Talk about your brand<\/p>",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
+        "a52ed427-5c5b-402c-9b0f-03d68907b16e": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>ー<strong>漫画でカンタンに<\/strong>各キットの使い方ー<\/p><p>初心者のみなさまにも<\/p><p>わかりやすく解説していますので<\/p><p>ご使用の際、是非ご覧ください。<\/p>"
+          }
+        },
+        "18dce226-6492-47cb-8de3-e38b1c8e3a17": {
+          "type": "button",
+          "settings": {
+            "button_label": "詳しく見る",
+            "button_link": "shopify:\/\/blogs\/use"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "a52ed427-5c5b-402c-9b0f-03d68907b16e",
+        "18dce226-6492-47cb-8de3-e38b1c8e3a17"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "image_box1": "shopify:\/\/shop_images\/title_howto_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_howto.png"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "16630447076fe1952f": {
+      "type": "lunacomic_dmm",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
+        "image_box1": "shopify:\/\/shop_images\/title_comic_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_comic_sp.png",
+        "description": "<p>まんがで<strong>DMMLuna<\/strong>をわかりやすくしました！<\/p>",
+        "blog": "comic",
+        "show_image": true,
+        "post_limit": 4,
+        "columns_desktop": 4
+      }
+    },
+    "16630449882c4105aa": {
+      "type": "lunaletter_dmm",
+      "disabled": true,
+      "settings": {
+        "image_box1": "shopify:\/\/shop_images\/title_letter_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_letter_sp.png",
+        "description": "<p>女性の皆さまにためになる情報を<\/p><p><strong>Lunaレター<\/strong>でお届けしています。<\/p>",
+        "blog": "letter",
+        "show_image": true,
+        "post_limit": 4,
         "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "background-1",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "show_view_all": true
       }
     },
-    "collage": {
-      "type": "collage",
+    "166272037471a94f4c": {
+      "type": "faq_dmm",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "1662720374468e2972-0": {
+          "type": "text",
           "settings": {
-            "collection": ""
+            "text": "<p>よくいただくご質問をまとめております。<\/p><p>お問い合わせの前にご覧ください。<\/p>"
           }
         },
-        "product": {
-          "type": "product",
+        "1662720374468e2972-1": {
+          "type": "button",
           "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "button_label": "詳しく見る",
+            "button_link": "shopify:\/\/pages\/faq"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "1662720374468e2972-0",
+        "1662720374468e2972-1"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "none",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_box1": "shopify:\/\/shop_images\/title_faq_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_faq.png"
       }
     },
-    "video": {
-      "type": "video",
+    "1662715393073e76f1": {
+      "type": "banner_single_dmm",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_box1": "shopify:\/\/shop_images\/banner_onlineclinic.png",
+        "image_box2": "shopify:\/\/shop_images\/btn_clinic_sp.png",
+        "link": "https:\/\/clinic.dmm.com\/"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+    "1659007883348e8aff": {
+      "type": "news-list",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image_box1": "shopify:\/\/shop_images\/title_news_pc.png",
+        "image_box2": "shopify:\/\/shop_images\/title_news.png",
+        "news_list": "news",
+        "post_limit": 3,
+        "news_list_date": true,
+        "news_list_category": false
       }
     },
-    "1661155809b7a99278": {
-      "type": "custom_slider",
+    "16627165684127bc2c": {
+      "type": "banner_2col_dmm",
       "settings": {
-        "comment_p": "",
-        "btn_link": "",
-        "btn_text": ""
-      }
-    },
-    "166115624405ed9d39": {
-      "type": "custom_slider",
-      "settings": {
-        "logo_img": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg",
-        "comment_p": "<p>コメント2<\/p>",
-        "btn_link": "shopify:\/\/pages\/contact",
-        "btn_text": "button"
+        "image_box1": "shopify:\/\/shop_images\/line_bnr.png",
+        "link1": "https:\/\/lin.ee\/JWZ9a0j",
+        "image_box2": "shopify:\/\/shop_images\/DMM_clinic_bnr.png",
+        "link2": "https:\/\/clinic.dmm.com\/"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn",
-    "1661155809b7a99278",
-    "166115624405ed9d39"
+    "16626248480bc090e5",
+    "1662961235e9234cea",
+    "16624467547b50cd63",
+    "1662452345e4fa5249",
+    "1663738202616368fa",
+    "16630447076fe1952f",
+    "16630449882c4105aa",
+    "166272037471a94f4c",
+    "1662715393073e76f1",
+    "1659007883348e8aff",
+    "16627165684127bc2c"
   ]
 }
