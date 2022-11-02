@@ -1,0 +1,106 @@
+<div class="collection-hero collection-hero--with-image lunacomic">
+  <div class="collection-hero__inner">
+    <div class="collection-hero__text-wrapper">
+      <h2 class="pc">
+        <a href="/blogs/comic">
+        {{ section.settings.image_pc | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_pc.alt | escape
+        }}
+        </a>
+      </h2>
+      <h2 class="sp">
+        <a href="/blogs/comic">
+        {{ section.settings.image_sp | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_sp.alt | escape
+        }}
+        </a>
+      </h2>
+    </div>
+  </div>
+</div>
+{% schema %}
+ {
+  "name": "Luna Comicバナータイトル",
+  "tag": "section",
+  "class": "section_lunacomic",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_sp",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトルLuna Comic",
+      "category": "画像"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.section_lunacomic{
+    position: relative;
+}
+.lunacomic{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/obi.png?v=1665125028);
+    background-size: contain;
+    height: 45px;
+    width: 100%;
+}
+.lunacomic img{
+    width: 100%;
+    height: auto;
+}
+.lunacomic .pc{
+    display: none;
+}
+.lunacomic .collection-hero__text-wrapper{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    max-width: 185px;
+}
+.lunacomic .collection-hero__text-wrapper h2{
+    margin: 0;
+}
+
+ @media screen and (min-width: 769px){
+    .lunacomic .sp{
+      display: none;
+    }
+    .lunacomic .pc{
+      display: block;
+    }
+    .lunacomic .collection-hero__text-wrapper{
+      max-width: 240px;
+      top: 40px;
+    }
+    .section_lunacomic .gradient{
+      background: transparent;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+    .lunacomic{
+        height: 65px;
+        border-radius: 10px 10px 0 0;
+    }
+    .lunacomic .collection-hero__inner{
+        width: 100%;
+        max-width: 1000px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

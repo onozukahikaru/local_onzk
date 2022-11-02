@@ -1,0 +1,41 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+
+<div id="Banner-{{ section.id }}" class="main-visual__top banner">
+    <h1 class="banner__media media banner__media-title">
+      {{ section.settings.image | image_url: width: 1500 | image_tag:
+        alt: section.settings.image.alt | escape
+      }}
+    </h1>
+    <h1 class="banner__media media banner__media-title__sp">
+      {{ section.settings.image_2 | image_url: width: 1500 | image_tag:
+        alt: section.settings.image_2.alt | escape
+      }}
+    </h1>
+</div>
+<div class="mvfor_sp"></div>
+
+{% schema %}
+{
+  "name": "メインビジュアル",
+  "tag": "section",
+  "class": "section_mv",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "メインビジュアル",
+      "category": "メインビジュアル"
+    }
+  ]
+}
+{% endschema %}

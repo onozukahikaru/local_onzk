@@ -90,7 +90,7 @@
       "email": "メール",
       "message": "コメント",
       "post": "コメントを投稿する",
-      "back_to_blog": "ブログに戻る",
+      "back_to_blog": "コミック一覧へ",
       "share": "この記事を共有する",
       "success": "コメントが投稿されました。ありがとうございます。",
       "success_moderated": "コメントが投稿されました。ブログが管理されているため、しばらくしてから公開されます。"
@@ -145,7 +145,7 @@
         "image_available": "ギャラリービューで画像 ({{ index }}) が利用できるようになりました"
       },
       "view_full_details": "詳細を表示する",
-      "include_taxes": "税込み。",
+      "include_taxes": "税込",
       "shipping_policy_html": "<a href=\"{{ link }}\">配送料<\/a>はチェックアウト時に計算されます。",
       "choose_options": "オプションを選択",
       "choose_product_options": "{{ product_name }}のオプションを選択する"
@@ -196,8 +196,8 @@
       "products": "商品管理",
       "search_for": "「{{ terms }}」を検索",
       "results_with_count_and_term": {
-        "one": "「{{ terms }}」の検索結果{{ count }}件",
-        "other": "「{{ terms }}」の検索結果{{ count }}件"
+        "one": "「{{ terms }}」の検索結果 {{ count }}件",
+        "other": "「{{ terms }}」の検索結果 {{ count }}件"
       }
     },
     "cart": {
@@ -307,7 +307,7 @@
       "view_addresses": "住所を確認",
       "return": "アカウントの詳細に戻る"
     },
-    "account_fallback": "アカウント",
+    "account_fallback": "Mypage",
     "activate_account": {
       "title": "アカウントを有効にする",
       "subtext": "パスワードを作成してアカウントを有効にしてください。",
@@ -339,8 +339,8 @@
       "delete": "削除",
       "delete_confirm": "この住所を削除してもよろしいですか?"
     },
-    "log_in": "ログイン",
-    "log_out": "ログアウト",
+    "log_in": "Login",
+    "log_out": "Logout",
     "login_page": {
       "cancel": "キャンセル",
       "create_account": "アカウントを作成する",
@@ -378,7 +378,7 @@
     },
     "reset_password": {
       "title": "アカウントのパスワードをリセットする",
-      "subtext": "新しいパスワードを入力してください",
+      "subtext": "{{ email }}の新しいパスワードを入力してください",
       "password": "パスワード",
       "password_confirm": "パスワードを確認する",
       "submit": "パスワードをリセットする"
@@ -422,6 +422,18 @@
       "expired": "期限切れ",
       "copy_code_success": "コードは正常にコピーされました",
       "print_gift_card": "印刷する"
+    }
+  },
+  "shopify": {
+    "links": {
+      "powered_by_shopify": " "
+    },
+    "checkout": {
+      "marketing": {
+        "accept_marketing_checkbox_label": "お知らせをメールで受け取る",
+        "accept_sms_checkbox_label": "お知らせをSMSで受け取る",
+        "post_accept_marketing_checkbox_label": "お知らせをメールで受け取る為に登録されています"
+      }
     }
   }
 }

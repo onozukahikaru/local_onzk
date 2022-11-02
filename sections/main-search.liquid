@@ -109,9 +109,7 @@
             {%- endif -%}
 
             <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-              <svg class="icon icon-search">
-                <use xlink:href="#icon-search">
-              </svg>
+              <img class="modal__toggle-open icon icon-search" src="https://cdn.shopify.com/s/files/1/0656/4688/7139/files/icon_search.png?v=1663650734">
             </button>
           </div>
         </form>
@@ -123,11 +121,11 @@
     {%- if search.performed -%}
       {%- unless section.settings.enable_filtering or section.settings.enable_sorting -%}
         {%- if search.results_count > 0 -%}
-          <p role="status">{{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}</p>
+          <p role="status" class="search-res">{{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}</p>
         {%- endif -%}
       {%- endunless -%}
       {%- if search.results_count == 0 and search.filters == empty -%}
-        <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+          <p role="status" class="search-res no-res">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
       {%- endif -%}
     {%- endif -%}
   </div>
@@ -229,8 +227,8 @@
                           lazy_load: lazy_load
                         %}
                       {%- when 'page' -%}
-                        <div class="article-card-wrapper card-wrapper underline-links-hover">
-                          <div class="card card--card card--text ratio color-{{ settings.blog_card_color_scheme }}" style="--ratio-percent: 100%;">
+                        <div class="card-wrapper underline-links-hover">
+                          <div class="card card--card card--text ratio color-{{ settings.card_color_scheme }}" style="--ratio-percent: 100%;">
                             <div class="card__content">
                               <div class="card__information">
                                 <h3 class="card__heading">
@@ -358,8 +356,7 @@
     },
     {
       "type": "header",
-      "content": "t:sections.main-search.settings.header__2.content",
-      "info": "t:sections.main-search.settings.header__2.info"
+      "content": "t:sections.main-search.settings.header__2.content"
     },
     {
       "type": "checkbox",

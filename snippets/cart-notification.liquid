@@ -12,9 +12,9 @@
   <div class="cart-notification-wrapper page-width">
     <div id="cart-notification" class="cart-notification focus-inset{% if color_scheme %} color-{{ color_scheme }} gradient{% endif %}" aria-modal="true" aria-label="{{ 'general.cart.item_added' | t }}" role="dialog" tabindex="-1">
       <div class="cart-notification__header">
-        <h2 class="cart-notification__heading caption-large text-body">{%- render 'icon-checkmark' -%} {{ 'general.cart.item_added' | t }}</h2>
+        <h2 class="cart-notification__heading caption-large text-body">{{ 'general.cart.item_added' | t }}</h2>
         <button type="button" class="cart-notification__close modal__close-button link link--text focus-inset" aria-label="{{ 'accessibility.close' | t }}">
-          <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#icon-close"></svg>
+          <img class="icon icon-close" src="https://cdn.shopify.com/s/files/1/0656/4688/7139/files/icon_close.png?v=1663650733">
         </button>
       </div>
       <div id="cart-notification-product" class="cart-notification-product"></div>

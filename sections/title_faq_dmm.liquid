@@ -1,0 +1,174 @@
+<div class="collection-hero collection-hero--with-image title_faq">
+  <div class="collection-hero__inner">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="pc">
+        {{ section.settings.image_pc | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_pc.alt | escape
+        }}
+      </h1>
+      <h1 class="sp">
+        {{ section.settings.image_sp | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_sp.alt | escape
+        }}
+      </h1>
+    </div>
+  </div>
+</div>
+{% schema %}
+ {
+  "name": "よくあるご質問バナータイトル",
+  "tag": "section",
+  "class": "section_pagefaq",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_sp",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトルよくあるご質問",
+      "category": "画像"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.section_pagefaq{
+    height:255px;
+    position: relative;
+}
+.section_pagefaq .collection-hero{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/bg_night_61e2c46f-f6bb-4b16-9d62-db9c490cbb86.jpg?v=1662441359);
+    background-size: cover;
+    height: 270px;
+    width: 100%;
+    margin-bottom: 40px;
+    position: absolute;
+    top: -40px;
+}
+.section_pagefaq .collection-hero::before{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/faqsp_kumo_right.png?v=1665459135);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+.section_pagefaq .collection-hero::after{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/faqsp_kumo_left.png?v=1665459134);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 95px;
+    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+.title_faq img{
+    width: 100%;
+    height: auto;
+}
+.title_faq .pc{
+    display: none;
+}
+.title_faq .collection-hero__text-wrapper{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    max-width: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+.title_faq .collection-hero__text-wrapper h1{
+    margin: 0;
+}
+.title_faq .collection-hero__inner{
+  position: relative;
+}
+@media screen and (max-width: 768px){
+  .title_faq .collection-hero__inner{
+      background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/faqsp_mv.png?v=1665459136);
+      background-position: bottom;
+      background-size: 365px;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+  }
+}
+@media screen and (min-width: 769px){
+    .title_faq .sp{
+      display: none;
+    }
+    .title_faq .pc{
+      display: block;
+    }
+     .section_pagefaq{
+         height: 320px;
+          width: 100vw;
+          margin: 0 calc(50% - 50vw);
+     }
+     .section_pagefaq .collection-hero {
+        height: 340px;
+       top: -60px;
+    }
+    .section_pagefaq .collection-hero__text-wrapper {
+        position: absolute;
+        top: 25px;
+        width: 100%;
+        max-width: 380px;
+    }
+    .section_pagefaq .collection-hero::before {
+        content: "";
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/faqpc_kumo.png?v=1665459136);
+        background-size: contain;
+        background-repeat: repeat-x;
+        max-width: 1375px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -20px;
+        left: 49%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+    }
+     .section_pagefaq .collection-hero::after{
+        content: "";
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/faqpc_mv.png?v=1665459135);
+        background-size: contain;
+        background-repeat: repeat-x;
+        max-width: 1035px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: auto;
+        bottom: -110px;
+        left: 49%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+    }
+    .section_pagefaq .gradient{
+      background: transparent;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

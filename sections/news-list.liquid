@@ -1,0 +1,168 @@
+{%- assign blog = blogs[section.settings.news_list] -%}
+
+<div id="section-news-list">
+  <div class="container">
+    <div class="news-list-heading">
+      <h2 class="title">
+        <img src="{{ section.settings.image_box1 | img_url: 'master' }}" alt="{{ section.settings.image_box1.alt }}" class="pc">
+        <img src="{{ section.settings.image_box2 | img_url: 'master' }}" alt="{{ section.settings.image_box1.alt }}" class="sp">
+      </h2>
+    </div>
+      <div class="news-list">
+        {% for article in blog.articles limit: section.settings.post_limit %}
+        	<div class="news-list-item">
+              <a href="{{ article.url }}">
+                <div class="news-list-info">
+                  {% if section.settings.news_list_date %}
+                    <span class="news-list-date">{{ article.published_at | date: "%Y/%m/%d" }}</span>
+                  {% endif %}
+                  {% if section.settings.news_list_category %}
+                    <span class="news-list-category">{{ article.tags }}</span>
+                  {% endif %}
+                </div>
+                <div class="news-list-title">{{ article.title }}</div>
+              </a>
+        	</div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "お知らせ一覧",
+  "class": "section_news",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_box1",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_box2",
+      "label": "タイトル画像モバイル"
+    },
+    {
+      "id": "news_list",
+      "type": "blog",
+      "label": "表示するブログ記事を選択"
+    },
+    {
+      "id": "post_limit",
+      "type": "range",
+      "label": "表示数を選択",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "id": "news_list_date",
+      "type": "checkbox",
+      "label": "日付を表示する",
+      "default": true
+    },
+    {
+      "id": "news_list_category",
+      "type": "checkbox",
+      "label": "カテゴリーを表示する",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "お知らせ一覧",
+      "category": "お知らせ一覧"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .section_news{
+    margin-top: 60px;
+  }
+  .section_news h2.title{
+        max-width: 115px;
+        margin: 0 auto;
+  }
+  #section-news-list .container{
+    max-width: 330px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff8f6;
+    border-radius: 5px;
+    position: relative;
+  }
+  .news-list-heading{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    top: -20px;
+  }
+  #section-news-list .news-list-item{
+    border-bottom: 3px solid #ffffff;
+  }
+  #section-news-list .news-list-item:last-child{
+     border-bottom: none;
+   }
+  #section-news-list .news-list-item>a{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 0;
+    font-family: 'Quicksand', sans-serif;
+    color: #4c4c4c;
+    text-decoration: none;
+    font-weight: 600;
+    
+  }
+  #section-news-list .news-list-item>a:hover .news-list-title{
+    color: #f48ebe;
+    text-decoration: underline;
+  }
+  #section-news-list .news-list-item:last-child{
+    border-bottom: none;
+  }
+  #section-news-list .news-list-title{
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    font-family: 'Quicksand', 'Zen Maru Gothic', sans-serif;
+  }
+  @media screen and (max-width: 768px){
+    #section-news-list{
+      padding: 0 25px;
+    }
+  }
+  @media screen and (min-width: 769px){
+    .section_news{
+      margin-top: 85px;
+    }
+    .section_news h2.title{
+        max-width: 155px;
+    }
+    #section-news-list .container{
+      max-width: 950px;
+      padding:30px 60px;
+      border-radius: 10px;
+    }
+    #section-news-list .news-list-item>a{
+      align-items: center;
+      flex-direction: row;
+      font-size: 1.8rem;
+    }
+    .news-list-date{
+      margin-right: 30px;
+    }
+    
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

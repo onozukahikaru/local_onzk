@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
+    <meta name="apple-mobile-web-app-title" content="DMMLuna">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
-
+    <link rel="apple-touch-icon" type="image/png" href="{{ 'appleicon.png' | file_img_url: '180x180' }}">
+    <link rel="icon" type="image/png" href="{{ 'appleicon.png' | file_img_url: '192x192' }}">
+    
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
@@ -89,38 +92,16 @@
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
-        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-        --product-card-text-alignment: {{ settings.card_text_alignment }};
-        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
-
-        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
-        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
-        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
-
-        --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
-        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
-        --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
-        --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
-        --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
+        --card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+        --card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+        --card-text-alignment: {{ settings.card_text_alignment }};
+        --card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+        --card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+        --card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+        --card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+        --card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+        --card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
 
         --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
 
@@ -210,8 +191,6 @@
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);
         font-weight: var(--font-body-weight);
-        background: #00ff00;
-        font-family: 'Zen Maru Gothic', sans-serif;
       }
 
       @media screen and (min-width: 750px) {
@@ -220,8 +199,9 @@
         }
       }
     {% endstyle %}
-
+    
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'customize_dmm.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -239,9 +219,107 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
-  </head>
+  <script type="text/javascript">if(typeof window.hulkappsWishlist === 'undefined') {
+        window.hulkappsWishlist = {};
+        }
+        window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
+        window.hulkappsWishlist.hasAppBlockSupport = '1';
+        </script>
+
+<!-- letters begin -->
+<script>
+var getUrlVars = function () {
+    var vars = {};
+    var param = location.search.substring(1).split('&');
+    for (var i = 0; i < param.length; i++) {
+        var keySearch = param[i].search(/=/);
+        var key = '';
+        if (keySearch != -1) key = param[i].slice(0, keySearch);
+        var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+        if (key != '') vars[key] = decodeURI(val);
+    }
+    return vars;
+}
+
+var vars = getUrlVars();
+if (vars.letters_aid && vars.rurl) {
+    var htmltag = document.getElementsByTagName("html")[0];
+    htmltag.style.visibility = "hidden";
+}
+</script>
+<!-- letters end -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+
 
   <body class="gradient">
+  <script>
+  (function() {
+    var getDevice = (function(){
+      var ua = navigator.userAgent;
+       if((ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) || ua.indexOf('Windows Phone') > 0) {
+         return 'sp'; } else { return 'pc'; }
+    })();
+    var url = location.href ;
+    var protocol = location.protocol ;
+    $.ajax({
+      url: protocol + "//tag-api.dmm.com/v1.0", //STG　時は　"//stg-tag-api.dmm.com/v1.0"
+      type: "post", timeout : 2500, dataType: "json",
+      data: JSON.stringify({
+        url: url, device: getDevice, login: 0, options: {'i3':'1', 'gtm':'1', 'aff':'0'},  cookies: document.cookie
+      }),
+    }).done(function(data) {
+      var _parentDiv = document.getElementById('tracking_area');
+      var _tags = data.tags;
+      _tags = _tags.replace(new RegExp('\\r?\\n', 'g'), '');
+      if (_tags.match(new RegExp('<!-- i3 tag -->.*?<\/script>', 'mig'))) {
+        _parentDiv.insertAdjacentHTML('beforeend', _tags.match(
+          new RegExp('(<input\\sid="i3.*?)<script>', 'mi'))[1]);
+        var _i3Script = document.createElement('script');
+        _i3Script.innerHTML = _tags.match(new RegExp('<script>(.+?)<\/script>', 'mi'))[1];
+        _parentDiv.insertBefore(_i3Script, null);
+        _tags = _tags.replace(new RegExp('<!-- i3 tag -->.*?<\/script>', 'mi'), '');
+      }
+      if (_tags.match(new RegExp('<!-- affiliate tool bar -->.*?<\/div>', 'mig'))) {
+        var _affWork = _tags.match(new RegExp('(<div\\sid="aff.*?<\/div>)', 'mi'))[1];
+        var _affScript = document.createElement('script');
+        _affScript.src = _affWork.match(new RegExp('<script src=\"(.*?)\".+?<\/script>', 'mi'))[1];
+        _affScript.async = _affWork.match(new RegExp('(async)', 'mi')) ? true : false;
+        _affWork = _affWork.replace(new RegExp('<script src=\"(.*?)\".+?<\/script>', 'mi'), '');
+        _parentDiv.insertAdjacentHTML('beforeend', _affWork);
+        var _affDiv = document.getElementById('affiliatetoolbarcss');
+        _affDiv.insertBefore(_affScript, null);
+        _tags = _tags.replace(new RegExp('<!-- affiliate tool bar -->.*?<\/div>', 'mi'), '');
+      }
+      var _scripts = _tags.match(new RegExp('(<script>|<script src=\".*?>).*?<\/script>', 'mig'));
+      if (_scripts != null) { var _scriptData = [];
+        for (var i = 0; i < _scripts.length; i++) {
+          if (_scripts[i].match(new RegExp('<script>(.+?)<\/script>', 'mi'))) {
+            _scriptData.push({
+              'code': _scripts[i].match(
+                new RegExp('<script>(.+?)<\/script>', 'mi'))[1], 'src': '', 'async': false
+            });
+          } else if (_scripts[i].match(new RegExp('<script src=\"(.*?)\".+?><\/script>', 'mi'))) {
+            var _async = _scripts[i].match(new RegExp('(async)', 'mi')) ? true : false;
+            _scriptData.push({ 'code': '', 'src': _scripts[i].match(
+              new RegExp('<script src=\"(.*?)\".+?<\/script>', 'mi'))[1], 'async': _async });
+          }
+        } 
+        for (var i = 0; i < _scriptData.length; i++) {
+          var _addScript = document.createElement('script');
+          if (_scriptData[i].code !== '') { _addScript.innerHTML = _scriptData[i].code;
+          } else if (_scriptData[i].src !== '') {
+            _addScript.src = _scriptData[i].src;
+            _addScript.async = _scriptData[i].async;
+          }
+          _parentDiv.insertBefore(_addScript, null);
+        };
+      }
+    })
+  })();
+</script>
+<div id="tracking_area"></div>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -252,9 +330,34 @@
 
     {% section 'announcement-bar' %}
     {% section 'header' %}
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+      {%- if template == 'index' -%}
+        <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {%- elsif template == 'collection'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages collection" role="main" tabindex="-1">
+      {%- elsif template == 'blog.letter'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages letter" role="main" tabindex="-1">
+      {%- elsif template == 'blog.comic'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages comic" role="main" tabindex="-1">
+      {%- elsif template == 'blog.use'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages howtouse" role="main" tabindex="-1">
+      {%- elsif template == 'article.comic'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages comic_detail" role="main" tabindex="-1">
+      {%- elsif template == 'article.use'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages howtouse_detail" role="main" tabindex="-1">
+      {%- elsif template == 'article.letter'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages letter_detail" role="main" tabindex="-1">
+      {%- elsif template == 'page.faq'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages faq" role="main" tabindex="-1">
+      {%- elsif template == 'blog.news'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages news" role="main" tabindex="-1">
+      {%- elsif template == 'article.news'-%}
+        <main id="MainContent" class="content-for-layout focus-none pages news_detail" role="main" tabindex="-1">
+      {%- else -%}
+        <main id="MainContent" class="content-for-layout focus-none pages" role="main" tabindex="-1">
+      {%- endif -%}
+      
+          {{ content_for_layout }}
+        </main>
 
     {% section 'footer' %}
 
@@ -295,5 +398,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-  </body>
+  {% render 'hulkappsWishlistPopup' %}
+</body>
 </html>

@@ -1,0 +1,151 @@
+<div class="collection-hero collection-hero--with-image lunaletter">
+  <div class="collection-hero__inner">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="pc">
+        {{ section.settings.image_pc | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_pc.alt | escape
+        }}
+      </h1>
+      <h1 class="sp">
+        {{ section.settings.image_sp | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_sp.alt | escape
+        }}
+      </h1>
+    </div>
+  </div>
+</div>
+{% schema %}
+ {
+  "name": "Luna letterバナータイトル",
+  "tag": "section",
+  "class": "section_lunaletter",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_sp",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトルLuna letter",
+      "category": "画像"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.section_lunaletter{
+    height: 280px;
+    position: relative;
+}
+.section_lunaletter .collection-hero{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/letterpc_bg.png?v=1665459136);
+    background-size: cover;
+    height: 270px;
+    width: 100%;
+    margin-bottom: 40px;
+    position: absolute;
+    top: -40px;
+}
+.section_lunaletter .collection-hero::before{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/lettersp_left.png?v=1665459135);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 205px;
+    height: 260px;
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+}
+.lunaletter img{
+    width: 100%;
+    height: auto;
+}
+.lunaletter .pc{
+    display: none;
+}
+.lunaletter .collection-hero__text-wrapper{
+    position: absolute;
+    top: 65px;
+    width: 100%;
+    max-width: 140px;
+    left: 45px;
+}
+.lunaletter .collection-hero__text-wrapper h1{
+    margin: 0;
+}
+.lunaletter .collection-hero__inner{
+  position: relative;
+}
+
+ @media screen and (max-width: 768px){
+     .section_lunaletter .collection-hero::after{
+        content: '';
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/lettersp_right.png?v=1665459135);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 274px;
+        height: 300px;
+        position: absolute;
+        top: -10px;
+        right: 0;
+    }
+ }
+ @media screen and (min-width: 769px){
+    .lunaletter .sp{
+      display: none;
+    }
+    .lunaletter .pc{
+      display: block;
+    }
+     .section_lunaletter{
+         height: 340px;
+          width: 100vw;
+          margin: 0 calc(50% - 50vw);
+     }
+     .section_lunaletter .collection-hero {
+        height: 320px;
+        top: -60px;
+    }
+    .lunaletter .collection-hero__text-wrapper {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        max-width: 395px;
+        left: 190px;
+    }
+    .section_lunaletter .collection-hero__inner{
+        height: 100%;
+        max-width: 1200px!important;
+    }
+     .section_lunaletter .collection-hero::before{
+        content: "";
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/dmmluna_lettermv.png?v=1666071690);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+        height: 380px;
+        position: absolute;
+        top: -20px;
+        left: 0;
+    }
+    .section_letter .gradient{
+      background: transparent;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

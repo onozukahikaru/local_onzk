@@ -1,0 +1,70 @@
+<div class="grid grid--1-col-tablet-down grid--1-col-desktop">
+  <div class="grid__item banner_single">
+      <a href="{{ section.settings.link }}" class="hover">
+        <img src="{{ section.settings.image_box1 | img_url: 'master' }}" alt="{{ section.settings.image_box1.alt }}" class="pc">
+        <img src="{{ section.settings.image_box2 | img_url: 'master' }}" alt="{{ section.settings.image_box1.alt }}" class="sp">
+      </a>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "バナーシングル",
+  "class": "section_banner1",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_box1",
+      "label": "画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_box2",
+      "label": "画像モバイル"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "URL"
+    }
+  ],
+
+"presets": [
+   {
+     "name": "バナーシングル",
+     "category": "画像"
+   }
+ ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .banner_single{
+    max-width: 330px!important;
+    margin: 0 auto;
+  }
+  .banner_single a{
+    display: block;
+  }
+  .banner_single img{
+    width: 100%;
+  }
+  .section_banner1{
+    margin-top: 50px;
+  }
+  @media screen and (max-width: 768px){
+      .section_banner1 .grid{
+        padding: 0 25px;
+      }
+  }
+  @media screen and (min-width: 769px){
+      .section_banner1{
+        margin-top: 80px;
+      }
+      .banner_single{
+        max-width: 750px!important;
+      }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

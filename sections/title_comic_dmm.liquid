@@ -1,0 +1,161 @@
+<div class="collection-hero collection-hero--with-image lunacomic">
+  <div class="collection-hero__inner">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="pc">
+        {{ section.settings.image_pc | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_pc.alt | escape
+        }}
+      </h1>
+      <h1 class="sp">
+        {{ section.settings.image_sp | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_sp.alt | escape
+        }}
+      </h1>
+    </div>
+  </div>
+</div>
+{% schema %}
+ {
+  "name": "Luna Comicトップバナータイトル",
+  "tag": "section",
+  "class": "section_lunacomic_top",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_sp",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトルLuna Comicトップ",
+      "category": "画像"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.section_lunacomic_top{
+    position: relative;
+}
+.comic .lunacomic{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/obi.png?v=1665125028);
+    background-size: contain;
+    height: 45px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+.lunacomic img{
+    width: 100%;
+    height: auto;
+}
+.lunacomic .pc{
+    display: none;
+}
+.comic .lunacomic .collection-hero__text-wrapper{
+    position: absolute;
+    top:42px;
+    width: 100%;
+    max-width: 290px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+.lunacomic .collection-hero__text-wrapper h2{
+    margin: 0;
+}
+.comic .collection-hero__inner{
+  position: relative;
+}
+.comic .collection-hero__inner::before{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/icon_comic.png?v=1663302621);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 208px;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+main.pages.comic{
+  margin-top: 200px;
+}
+.comic .main-blog{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.comic h3.card__heading.h2:before{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/logo_enjoycomic.png?v=1663048142);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin-bottom: 5px;
+}
+.comic .card__content a{
+    font-family: Zen Maru Gothic;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #f48ebe;
+}
+ @media screen and (min-width: 769px){
+    .lunacomic .sp{
+      display: none;
+    }
+    .lunacomic .pc{
+      display: block;
+    }
+    .comic .lunacomic .collection-hero__text-wrapper{
+      max-width: 400px;
+      top: 95px;
+    }
+     .pages.comic .main-blog {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    .section_lunacomic_top .gradient{
+      background: transparent;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+    .comic .lunacomic{
+        height: 65px;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 180px;
+    }
+    .lunacomic .collection-hero__inner{
+        width: 100%;
+        max-width: 1000px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+    }
+     .comic .blog-articles{
+         grid-template-columns: 1fr 1fr 1fr;
+     }
+     .comic .collection-hero__inner::before{
+          width: 300px;
+          height: 308px;
+          top: -90px;
+     }
+     .comic .card__content a {
+          font-size: 4rem;
+      }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

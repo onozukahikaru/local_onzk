@@ -1,0 +1,8 @@
+
+{%- assign published_date = article.published_at | date: '%s' -%}
+{%- assign passed_days = 'now' | date: '%s' | minus: published_date | divided_by: 86400 -%}
+{%- if passed_days <= 30 -%}
+   <div class="new-icon">
+     <img src="https://cdn.shopify.com/s/files/1/0656/4688/7139/files/new_icon_660fdec8-74a6-4285-b0fe-3d4a4f3bb9a1.png?v=1663045815" alt="New"/>
+   </div>
+{%- endif -%}

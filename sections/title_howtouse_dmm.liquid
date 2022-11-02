@@ -1,0 +1,212 @@
+<div class="collection-hero collection-hero--with-image how">
+  <div class="collection-hero__inner">
+    <div class="collection-hero__text-wrapper">
+      <h1 class="pc">
+        {{ section.settings.image_pc | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_pc.alt | escape
+        }}
+      </h1>
+      <h1 class="sp">
+        {{ section.settings.image_sp | image_url: width: 1500 | image_tag:
+          alt: section.settings.image_sp.alt | escape
+        }}
+      </h1>
+    </div>
+  </div>
+</div>
+{% schema %}
+ {
+  "name": "検査キットの使い方バナータイトル",
+  "tag": "section",
+  "class": "section_howtouse",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_pc",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_sp",
+      "label": "タイトル画像モバイル"
+    }
+  ],
+  "presets": [
+    {
+      "name": "タイトル検査キットの使い方",
+      "category": "画像"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.section_howtouse{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/bg_dot.jpg?v=1662973564)!important;
+    background-size: 25px!important;
+    padding-bottom: 45px;
+    padding-top: 10px;
+    position: relative;
+    height: 270px;
+}
+.how{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/mvbg_pc.png?v=1665033612);
+    background-size: cover;
+    height: 300px;
+    position: absolute;
+    top: -93px;
+    width: 100%;
+}
+.how img{
+    width: 100%;
+    height: auto;
+}
+.how .pc{
+    display: none;
+}
+.how .collection-hero__text-wrapper{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 325px;
+}
+.how .collection-hero__inner{
+    position: absolute;
+    height: 50px;
+    margin-top: 20px;
+    width: 100%;
+    bottom: -30px;
+    z-index: 2;
+  
+ }
+.collection-hero.collection-hero--with-image.how::before{
+    content: '';
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/left_how_sp.png?v=1666328924);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 200px;
+    position: absolute;
+    bottom: 0;
+}
+.how .collection-hero__inner:before{
+    content: '';
+    background: #fff8f6;
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 15px;
+}
+.howtouse .section .kit_intro{
+    margin: 0;
+    padding: 0 5rem;
+}
+.howtouse h1.title--primary{
+    display: none;
+}
+.kit_intro{
+    text-align: center;
+    color: #4c4c4c;
+    margin: 0;
+    line-height: 1.7;
+    font-size: 1.6rem;
+}
+ @media screen and (max-width: 768px){
+   .collection-hero.collection-hero--with-image.how::after{
+        content: '';
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/right_how_sp.png?v=1666328924);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: 225px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+ }
+ @media screen and (min-width: 769px){
+    .kit_intro .sp,
+    .how .sp{
+      display: none;
+    }
+    .kit_intro{
+      font-size: 2rem;
+    }
+    .how .pc{
+      display: block;
+    }
+    .how .collection-hero__text-wrapper{
+      max-width: 510px;
+      top: 22px;
+    }
+    .how .collection-hero__inner{
+        bottom: -95px;
+        height: 78px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+     }
+    .how .collection-hero__inner:before{
+        height: 20px;
+        bottom: 50px;
+    }
+     .section_howtouse{
+       background-size: 45px!important;
+       height: 370px;
+       width: 100vw;
+       margin: 0 calc(50% - 50vw);
+     }
+    .section_howtouse .gradient{
+      background: transparent;
+      margin-bottom: 50px;
+      margin-top: 20px;
+    }
+     .how{
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/mvbg_pc.png?v=1665033612);
+        background-size: cover;
+        height: 410px;
+        position: absolute;
+        top: -135px;
+        width: 100%;
+    }
+     .collection-hero.collection-hero--with-image.how::before{
+         content: '';
+         background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/mv_how.png?v=1665105444);
+         background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        display: block;
+        width: 100%;
+        max-width: 900px;
+        max-height: none;
+        height: 100%;
+        position: absolute;
+        bottom: 5px;
+        left: 49%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+     }
+     .howtouse .shopify-section.section .gradient{
+        border-radius: 10px 10px 0 0;
+     }
+     .howtouse .shopify-section.section:last-of-type{
+        border-radius: 0 0 10px 10px;
+        background: #fff8f6;
+     }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

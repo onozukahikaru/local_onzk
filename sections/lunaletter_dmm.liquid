@@ -1,0 +1,282 @@
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-featured-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'swiper7.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-article-card.css' | asset_url | stylesheet_tag }}</noscript>
+
+{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}
+{{ 'swiper7.js' | asset_url | script_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign posts_displayed = section.settings.blog.articles_count
+  if section.settings.post_limit <= section.settings.blog.articles_count
+    assign posts_exceed_limit = true
+    assign posts_displayed = section.settings.post_limit
+  endif
+-%}
+<div class="blog">
+  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
+
+      <div class="collection__title title-wrapper--no-top-margin">
+        <h2 id="SectionHeading-{{ section.id }}" class="blog__title title">
+            <img src="{{ section.settings.image_box1 | img_url: 'master' }}" alt="{{ section.settings.image_box1.alt }}" class="pc">
+            <img src="{{ section.settings.image_box2 | img_url: 'master' }}" alt="{{ section.settings.image_box2.alt }}" class="sp">
+        </h2>
+        {%- if section.settings.description != blank or section.settings.show_description and section.settings.collection.description != empty -%}
+          <div class="collection__description {{ section.settings.description_style }}">{%- if section.settings.show_description -%}{{ section.settings.collection.description }}{%- else -%}{{ section.settings.description }}{% endif %}</div>
+        {%- endif -%}
+      </div>
+    
+    {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
+      <div class="swiper l-swiper">
+        <div id="Slider-{{ section.id }}" class="blog__posts swiper-wrapper">
+          {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+            <div id="Slide-{{ section.id }}-{{ forloop.index }}" class="blog__post swiper-slide">
+              {% render 'article-card', blog: section.settings.blog, article: article, media_aspect_ratio: 1.66, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, show_excerpt: true %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="swiper-button-prev slider-button l-prev">{% render 'icon-arrowcircle_outline' %}{% render 'icon-arrowcircle_inner' %}</div>
+      <div class="swiper-button-next slider-button l-next">{% render 'icon-arrowcircle_outline' %}{% render 'icon-arrowcircle_inner' %}</div>
+    
+      {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
+        <div class="blog__view-all seemore">
+          <a href="{{ section.settings.blog.url }}" id="ViewAll-{{ section.id }}" class="blog__button button" aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}">
+            {% render 'icon-arrow-wh_dmm' %}
+          </a>
+        </div>
+      {%- endif -%}
+    {%- else -%}
+      <div class="blog-placeholder">
+        <div class="placeholder media media--landscape">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+        <div class="blog-placeholder__content">
+          <h2>
+            {{ 'sections.featured_blog.onboarding_title' | t }}
+          </h2>
+          <p class="rte-width">
+            {{ 'sections.featured_blog.onboarding_content' | t }}
+          </p>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Luna Letter",
+  "tag": "section",
+  "class": "section_letter",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_box1",
+      "label": "タイトル画像デスクトップ"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_box2",
+      "label": "タイトル画像モバイル"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_image.label",
+      "info": "t:sections.featured-blog.settings.show_image.info"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.post_limit.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.featured-blog.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "t:sections.featured-blog.settings.show_view_all.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luna Letter",
+      "settings": {
+        "blog": "Luna Letter"
+      }
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .section_letter{
+    background: #fff8fe;
+    border-top: 20px solid #fce8fa;
+    margin-top: 100px;
+  }
+  .section_letter h2.title{
+        width: 100%;
+        max-width: 210px;
+        margin: 0 auto;
+  }
+  .section_letter .collection__title{
+        margin-bottom: 0!important;
+        padding-top: 15px;
+        position: relative;
+  }
+  .section_letter .collection__title::before{
+    content: '';
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/icon_letter.png?v=1663302622);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 120px;
+    height: 90px;
+    position: absolute;
+    top: -80px;
+    left: 59%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  }
+  .section_letter .collection__description {
+    text-align: center;
+    width: 100%;
+  }
+  .section_letter .card__inner{
+    width: 275px;
+    height: 190px;
+  }
+  .section_letter .swiper{
+    padding: 30px 0 20px;
+  }
+  @media screen and (max-width: 768px){
+    .section_letter .swiper-slide {
+        width: 275px!important;
+    }
+    .section_letter .swiper .swiper-wrapper{
+        margin: 0;
+    }
+    .shopify-section.section_letter .blog .slider-button{
+       top: 51%;
+    }
+  }
+  @media screen and (min-width: 769px){
+    .section_letter{
+      margin-top: 125px;
+    }
+    .section_letter h2.title{
+        max-width: 285px;
+        margin-bottom: 2rem;
+      }
+    .section_letter .collection__title{
+        padding-top: 25px;
+      }
+    .section_letter .collection__title::before{
+        content: '';
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/icon_letter_pc.png?v=1664505469);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left;
+        width: 140px;
+        height: 105px;
+        top: -90px;
+        left: 54%;
+      }
+    .section_letter .blog__post .card__heading a{
+          font-size: 3.5rem;
+    }
+    .section_letter .collection__description {
+      font-size: 1.8rem;
+    }
+    .section_letter .collection__description p {
+        display: inline;
+    }
+    .section_letter .card--standard .card__inner{
+      width: 100%;
+      height: auto;
+      min-width: 355px;
+      min-height: 255px;
+      margin: 0;
+    }
+    .section_letter .swiper .blog__posts .article-card .card__information{
+      padding-top: 0;
+    }
+    .section_letter .swiper{
+      padding: 30px 0;
+    }
+    .section_letter .swiper-button-prev{
+       left: -40px;
+    }
+    .section_letter .swiper-button-next{
+       right: -40px;
+    }
+    .shopify-section.section_letter .blog .slider-button{
+       top: 44%;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  const swiper = new Swiper('.l-swiper', {
+        direction: 'horizontal',
+        loop: false,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        centeredSlides: true,
+        breakpoints: {
+          769: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+            centeredSlides: false,
+          }
+        },
+        navigation: {
+          nextEl: '.l-next',
+          prevEl: '.l-prev',
+        },
+    });
+{% endjavascript %}

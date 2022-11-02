@@ -1,0 +1,328 @@
+{{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+
+<div class="image-with-text page-width isolate">
+      <div class="slider__list--left">
+        {%- if section.settings.image != blank -%}
+          <img
+              {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            loading="lazy"
+            class="first"
+          >
+        <img
+              {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+            src="{{ section.settings.image | image_url }}"
+            alt="{{ section.settings.image.alt | escape }}"
+            loading="lazy"
+            class="second"
+          >
+        {%- else -%}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+      {%- for block in section.blocks -%}
+          {% case block.type %}
+            {%- when 'text' -%}
+            <div class="float_title">
+              <div class="float_bg"><div class="image-with-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text_1 }}</div></div>
+            </div>
+          {%- endcase -%}
+        {%- endfor -%}
+    </div>
+    <div class="image-with-text__text-item">
+      <div id="ImageWithText--{{ section.id }}" class="image-with-text__content">
+        <div class="challenge_box">
+        {%- for block in section.blocks -%}
+          {% case block.type %}
+                {%- when 'text' -%}
+                  <h2 class="image-with-text__heading" {{ block.shopify_attributes }}>
+                    {{ block.settings.text_2 }}
+                  </h2>
+                  <div class="image-with-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text_3 }}</div>
+          {%- endcase -%}
+        {%- endfor -%}
+        </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "DMMLunaの新しい挑戦",
+  "class": "section_challenge",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "カルーセル画像"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "t:sections.image-with-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "バナーのテキスト"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "コンテンツタイトル"
+        },
+        {
+          "type": "richtext",
+          "id": "text_3",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "コンテンツテキスト"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "DMMLunaの新しい挑戦",
+      "blocks": [
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+.slider__list--left{
+   display: flex;
+   width: 100vw;
+   margin-left: calc(-50vw + 50%);
+   height: 275px;
+}
+.slider__list--left .first {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-animation: ladycarousel 100s -50s linear infinite;
+    animation: ladycarousel 100s -50s linear infinite;
+    width: 100%;
+} 
+.slider__list--left .second {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+    -webkit-animation: ladycarousel_2 100s linear infinite;
+    animation: ladycarousel_2 100s linear infinite;
+    width: 100%;
+}
+.slider__list--left img {
+    max-height: 275px;
+    min-width: 2100px;
+}
+@keyframes ladycarousel {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+@keyframes ladycarousel_2 {
+  0% {
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-200%);
+  }
+}
+  .section_challenge{
+    overflow: hidden;
+  }
+  .section_challenge .page-width{
+    max-width: 1110px;
+    padding-top: 90px;
+  }
+  .float_title{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+  }
+  .float_bg{
+    position: relative;
+    width: 240px;
+    height: 240px;
+  }
+  .float_bg::before{
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/logo_bgcircle.png?v=1662964843);
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: '';
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    z-index: 0;
+  }
+  .float_bg .image-with-text__text{
+    position: absolute;
+    z-index: 1;
+    width: 240px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  .float_bg .image-with-text__text strong{
+    color: #f48ebe;
+  }
+  .challenge_box{
+    background: #fff8f6;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .challenge_box .image-with-text__heading p{
+    border-bottom: 6px solid #fde3eb;
+    padding: 0px 25px 10px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 500;
+    margin: 0;
+  }
+  .challenge_box .image-with-text__text{
+    position: relative;
+    padding: 15px 23px 150px;
+    font-size: 1.2rem;
+  }
+  .challenge_box .image-with-text__text p{
+    margin: 0;
+  }
+  .challenge_box .image-with-text__text strong{
+    font-size: 1.4rem;
+    color: #4c4c4c;
+    display: block;
+  }
+  .challenge_box .image-with-text__text.rte::before{
+    content: '';
+    background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/challenge.png?v=1662970522);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    bottom: 0;
+    width: 210px;
+    height: 130px;
+  }
+  .section_challenge .image-with-text__content{
+    padding: 0;
+    padding: 10px 25px 0px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .challenge_box .image-with-text__text p:nth-child(3){
+      margin-top: 1rem;
+  }
+  
+  @media screen and (min-width: 769px){
+     .section_challenge {
+      margin-top: 50px;
+    }
+    .section_challenge .page-width{
+      padding-top: 60px;
+    }
+    .section_challenge .image-with-text__content{
+      padding: 0;
+      padding-top: 30px;
+      max-width: none;
+    }
+    .slider__list--left{
+      height: 440px;
+    }
+    .slider__list--left img {
+      max-height: 440px;
+      min-width: 3220px;
+    }
+    .float_title{
+       top: 0;
+       left: 0;
+    }
+    .float_bg{
+        width: 380px;
+        height: 380px;
+    }
+    .float_bg::before{
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/bg_circle_pc.png?v=1666072955);
+        background-size: cover;
+        background-repeat: no-repeat;
+        content: '';
+        width: 380px;
+        height: 380px;
+    }
+    .float_bg .image-with-text__text{
+        width: 380px;
+        font-size: 3rem;
+        line-height: 1;
+        font-weight: 500;
+    }
+    .challenge_box {
+      border-radius: 10px;
+    }
+    .challenge_box h2.image-with-text__heading{
+        margin-top: 12px;
+    }
+    .challenge_box .image-with-text__heading p{
+      border-bottom: 8px solid #fde3eb;
+      padding: 0px 50px 10px;
+      margin-top: 15px;
+    }
+    .challenge_box .image-with-text__text strong{
+        font-size: 1.8rem;
+        margin-bottom: 0;
+    }
+    .challenge_box .image-with-text__heading p strong{
+        font-size: 2.8rem;
+    }
+    .challenge_box .image-with-text__text p{
+      margin-bottom: 0;
+      max-width: 53%;
+    }
+    .challenge_box .image-with-text__text{
+      padding: 15px 50px 30px;
+      font-size: 1.5rem;
+    }
+    .challenge_box .image-with-text__text.rte::before{
+       content: "";
+        background: url(https://cdn.shopify.com/s/files/1/0656/4688/7139/files/challenge.png?v=1662970522);
+        background-size: contain;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: auto;
+        right: 45px;
+        transform: none;
+        bottom: 0;
+        width: 330px;
+        height: 200px;
+    }
+    .challenge_box .image-with-text__content{
+        padding: 0;
+        margin-top: 20px;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

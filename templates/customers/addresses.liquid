@@ -1,0 +1,270 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+{%- paginate customer.addresses by 5 -%}
+  <div class="customer addresses" data-customer-addresses>
+    <svg style="display: none">
+      <symbol id="icon-caret" viewBox="0 0 10 6">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+      </symbol>
+    </svg>
+    <h1>{{ 'customer.addresses.title' | t }}</h1>
+    <a href="{{ routes.account_url }}">
+      {{ 'customer.account.return' | t }}
+    </a>
+
+    <div data-address>
+      <button
+        type="button"
+        aria-expanded="false"
+        aria-controls="AddAddress"
+      >
+        {{ 'customer.addresses.add_new' | t }}
+      </button>
+      <div id="AddAddress">
+        <h2 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
+        {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+          <div>
+            <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+            <div class="select">
+              <select
+                id="AddressCountryNew"
+                name="address[country]"
+                data-default="{{ form.country | default: 'Japan'}}"
+                autocomplete="country"
+              >
+                {{ all_country_option_tags  | replace: '[&quot;Aichi&quot;,&quot;愛知県&quot;],[&quot;Akita&quot;,&quot;秋田県&quot;],[&quot;Aomori&quot;,&quot;青森県&quot;],[&quot;Chiba&quot;,&quot;千葉県&quot;],[&quot;Ehime&quot;,&quot;愛媛県&quot;],[&quot;Fukui&quot;,&quot;福井県&quot;],[&quot;Fukuoka&quot;,&quot;福岡県&quot;],[&quot;Fukushima&quot;,&quot;福島県&quot;],[&quot;Gifu&quot;,&quot;岐阜県&quot;],[&quot;Gunma&quot;,&quot;群馬県&quot;],[&quot;Hiroshima&quot;,&quot;広島県&quot;],[&quot;Hokkaidō&quot;,&quot;北海道&quot;],[&quot;Hyōgo&quot;,&quot;兵庫県&quot;],[&quot;Ibaraki&quot;,&quot;茨城県&quot;],[&quot;Ishikawa&quot;,&quot;石川県&quot;],[&quot;Iwate&quot;,&quot;岩手県&quot;],[&quot;Kagawa&quot;,&quot;香川県&quot;],[&quot;Kagoshima&quot;,&quot;鹿児島県&quot;],[&quot;Kanagawa&quot;,&quot;神奈川県&quot;],[&quot;Kumamoto&quot;,&quot;熊本県&quot;],[&quot;Kyōto&quot;,&quot;京都府&quot;],[&quot;Kōchi&quot;,&quot;高知県&quot;],[&quot;Mie&quot;,&quot;三重県&quot;],[&quot;Miyagi&quot;,&quot;宮城県&quot;],[&quot;Miyazaki&quot;,&quot;宮崎県&quot;],[&quot;Nagano&quot;,&quot;長野県&quot;],[&quot;Nagasaki&quot;,&quot;長崎県&quot;],[&quot;Nara&quot;,&quot;奈良県&quot;],[&quot;Niigata&quot;,&quot;新潟県&quot;],[&quot;Okayama&quot;,&quot;岡山県&quot;],[&quot;Okinawa&quot;,&quot;沖縄県&quot;],[&quot;Saga&quot;,&quot;佐賀県&quot;],[&quot;Saitama&quot;,&quot;埼玉県&quot;],[&quot;Shiga&quot;,&quot;滋賀県&quot;],[&quot;Shimane&quot;,&quot;島根県&quot;],[&quot;Shizuoka&quot;,&quot;静岡県&quot;],[&quot;Tochigi&quot;,&quot;栃木県&quot;],[&quot;Tokushima&quot;,&quot;徳島県&quot;],[&quot;Tottori&quot;,&quot;鳥取県&quot;],[&quot;Toyama&quot;,&quot;富山県&quot;],[&quot;Tōkyō&quot;,&quot;東京都&quot;],[&quot;Wakayama&quot;,&quot;和歌山県&quot;],[&quot;Yamagata&quot;,&quot;山形県&quot;],[&quot;Yamaguchi&quot;,&quot;山口県&quot;],[&quot;Yamanashi&quot;,&quot;山梨県&quot;],[&quot;Ōita&quot;,&quot;大分県&quot;],[&quot;Ōsaka&quot;,&quot;大阪府&quot;]', '[&quot;Hokkaidō&quot;,&quot;北海道&quot;],[&quot;Aomori&quot;,&quot;青森県&quot;],[&quot;Iwate&quot;,&quot;岩手県&quot;],[&quot;Miyagi&quot;,&quot;宮城県&quot;],[&quot;Akita&quot;,&quot;秋田県&quot;],[&quot;Yamagata&quot;,&quot;山形県&quot;],[&quot;Fukushima&quot;,&quot;福島県&quot;],[&quot;Ibaraki&quot;,&quot;茨城県&quot;],[&quot;Tochigi&quot;,&quot;栃木県&quot;],[&quot;Gunma&quot;,&quot;群馬県&quot;],[&quot;Saitama&quot;,&quot;埼玉県&quot;],[&quot;Chiba&quot;,&quot;千葉県&quot;],[&quot;Tōkyō&quot;,&quot;東京都&quot;],[&quot;Kanagawa&quot;,&quot;神奈川県&quot;],[&quot;Niigata&quot;,&quot;新潟県&quot;],[&quot;Toyama&quot;,&quot;富山県&quot;],[&quot;Ishikawa&quot;,&quot;石川県&quot;],[&quot;Fukui&quot;,&quot;福井県&quot;],[&quot;Yamanashi&quot;,&quot;山梨県&quot;],[&quot;Nagano&quot;,&quot;長野県&quot;],[&quot;Gifu&quot;,&quot;岐阜県&quot;],[&quot;Shizuoka&quot;,&quot;静岡県&quot;],[&quot;Aichi&quot;,&quot;愛知県&quot;],[&quot;Mie&quot;,&quot;三重県&quot;],[&quot;Shiga&quot;,&quot;滋賀県&quot;],[&quot;Kyōto&quot;,&quot;京都府&quot;],[&quot;Ōsaka&quot;,&quot;大阪府&quot;],[&quot;Hyōgo&quot;,&quot;兵庫県&quot;],[&quot;Nara&quot;,&quot;奈良県&quot;],[&quot;Wakayama&quot;,&quot;和歌山県&quot;],[&quot;Tottori&quot;,&quot;鳥取県&quot;],[&quot;Shimane&quot;,&quot;島根県&quot;],[&quot;Okayama&quot;,&quot;岡山県&quot;],[&quot;Hiroshima&quot;,&quot;広島県&quot;],[&quot;Yamaguchi&quot;,&quot;山口県&quot;],[&quot;Tokushima&quot;,&quot;徳島県&quot;],[&quot;Kagawa&quot;,&quot;香川県&quot;],[&quot;Ehime&quot;,&quot;愛媛県&quot;],[&quot;Kōchi&quot;,&quot;高知県&quot;],[&quot;Fukuoka&quot;,&quot;福岡県&quot;],[&quot;Saga&quot;,&quot;佐賀県&quot;],[&quot;Nagasaki&quot;,&quot;長崎県&quot;],[&quot;Kumamoto&quot;,&quot;熊本県&quot;],[&quot;Ōita&quot;,&quot;大分県&quot;],[&quot;Miyazaki&quot;,&quot;宮崎県&quot;],[&quot;Kagoshima&quot;,&quot;鹿児島県&quot;],[&quot;Okinawa&quot;,&quot;沖縄県&quot;]'}}
+              </select>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                <use href="#icon-caret" />
+              </svg>
+            </div>
+          </div>
+          
+          <div class="field name-half">
+            <input type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+            <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+          </div>
+          <div class="field name-half">
+            <input type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+            <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+          </div>
+          
+          <div class="field">
+            <input type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+            <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+          </div>
+          <div id="AddressProvinceContainerNew" style="display: none" class="form-top1">
+            <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+            <div class="select">
+              <select
+                id="AddressProvinceNew"
+                name="address[province]"
+                data-default="{{ form.province }}"
+                autocomplete="address-level1"
+              >
+              </select>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                <use href="#icon-caret" />
+              </svg>
+            </div>
+          </div>
+          <div class="field">
+            <input type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+            <label for="AddressCityNew">市区町村</label>
+          </div>
+          
+          <div class="field">
+            <input type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+            <label for="AddressAddress1New">住所</label>
+          </div>
+          <div class="field">
+            <input type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+            <label for="AddressAddress2New">建物名、部屋番号など（任意）</label>
+          </div>
+          
+          <div class="field">
+            <input type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+            <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+          </div>
+<!--           <div class="field">
+            <input type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+            <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+          </div> -->
+          <div>
+            {{ form.set_as_default_checkbox }}
+            <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
+          </div>
+          <div>
+            <button class="form-btn100">{{ 'customer.addresses.add' | t }}</button>
+            <button type="reset" class="form-btn100">{{ 'customer.addresses.cancel' | t }}</button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+
+    <ul role="list">
+      {%- for address in customer.addresses -%}
+        <li data-address>
+          {%- if address == customer.default_address -%}
+            <h2>{{ 'customer.addresses.default' | t }}</h2>
+          {%- endif -%}
+          {{ address | format_address }}
+          <button
+            type="button"
+            id="EditFormButton_{{ address.id }}"
+            aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+            aria-controls="EditAddress_{{ address.id }}"
+            aria-expanded="false"
+            data-address-id="{{ address.id }}"
+          >
+            {{ 'customer.addresses.edit' | t }}
+          </button>
+          <button
+            type="button"
+            aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+            data-target="{{ address.url }}"
+            data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+          >
+            {{ 'customer.addresses.delete' | t }}
+          </button>
+          <div id="EditAddress_{{ address.id }}">
+            <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
+            {%- form 'customer_address', address -%}
+              <div>
+                <label for="AddressCountry_{{ form.id }}"  class="form-label">
+                  {{ 'customer.addresses.country' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressCountry_{{ form.id }}"
+                    name="address[country]"
+                    data-address-country-select
+                    data-default="{{ form.country | default: 'Japan'}}"
+                    data-form-id="{{ form.id }}"
+                    autocomplete="country"
+                  >
+                    {{ all_country_option_tags  | replace: '[&quot;Aichi&quot;,&quot;愛知県&quot;],[&quot;Akita&quot;,&quot;秋田県&quot;],[&quot;Aomori&quot;,&quot;青森県&quot;],[&quot;Chiba&quot;,&quot;千葉県&quot;],[&quot;Ehime&quot;,&quot;愛媛県&quot;],[&quot;Fukui&quot;,&quot;福井県&quot;],[&quot;Fukuoka&quot;,&quot;福岡県&quot;],[&quot;Fukushima&quot;,&quot;福島県&quot;],[&quot;Gifu&quot;,&quot;岐阜県&quot;],[&quot;Gunma&quot;,&quot;群馬県&quot;],[&quot;Hiroshima&quot;,&quot;広島県&quot;],[&quot;Hokkaidō&quot;,&quot;北海道&quot;],[&quot;Hyōgo&quot;,&quot;兵庫県&quot;],[&quot;Ibaraki&quot;,&quot;茨城県&quot;],[&quot;Ishikawa&quot;,&quot;石川県&quot;],[&quot;Iwate&quot;,&quot;岩手県&quot;],[&quot;Kagawa&quot;,&quot;香川県&quot;],[&quot;Kagoshima&quot;,&quot;鹿児島県&quot;],[&quot;Kanagawa&quot;,&quot;神奈川県&quot;],[&quot;Kumamoto&quot;,&quot;熊本県&quot;],[&quot;Kyōto&quot;,&quot;京都府&quot;],[&quot;Kōchi&quot;,&quot;高知県&quot;],[&quot;Mie&quot;,&quot;三重県&quot;],[&quot;Miyagi&quot;,&quot;宮城県&quot;],[&quot;Miyazaki&quot;,&quot;宮崎県&quot;],[&quot;Nagano&quot;,&quot;長野県&quot;],[&quot;Nagasaki&quot;,&quot;長崎県&quot;],[&quot;Nara&quot;,&quot;奈良県&quot;],[&quot;Niigata&quot;,&quot;新潟県&quot;],[&quot;Okayama&quot;,&quot;岡山県&quot;],[&quot;Okinawa&quot;,&quot;沖縄県&quot;],[&quot;Saga&quot;,&quot;佐賀県&quot;],[&quot;Saitama&quot;,&quot;埼玉県&quot;],[&quot;Shiga&quot;,&quot;滋賀県&quot;],[&quot;Shimane&quot;,&quot;島根県&quot;],[&quot;Shizuoka&quot;,&quot;静岡県&quot;],[&quot;Tochigi&quot;,&quot;栃木県&quot;],[&quot;Tokushima&quot;,&quot;徳島県&quot;],[&quot;Tottori&quot;,&quot;鳥取県&quot;],[&quot;Toyama&quot;,&quot;富山県&quot;],[&quot;Tōkyō&quot;,&quot;東京都&quot;],[&quot;Wakayama&quot;,&quot;和歌山県&quot;],[&quot;Yamagata&quot;,&quot;山形県&quot;],[&quot;Yamaguchi&quot;,&quot;山口県&quot;],[&quot;Yamanashi&quot;,&quot;山梨県&quot;],[&quot;Ōita&quot;,&quot;大分県&quot;],[&quot;Ōsaka&quot;,&quot;大阪府&quot;]', '[&quot;Hokkaidō&quot;,&quot;北海道&quot;],[&quot;Aomori&quot;,&quot;青森県&quot;],[&quot;Iwate&quot;,&quot;岩手県&quot;],[&quot;Miyagi&quot;,&quot;宮城県&quot;],[&quot;Akita&quot;,&quot;秋田県&quot;],[&quot;Yamagata&quot;,&quot;山形県&quot;],[&quot;Fukushima&quot;,&quot;福島県&quot;],[&quot;Ibaraki&quot;,&quot;茨城県&quot;],[&quot;Tochigi&quot;,&quot;栃木県&quot;],[&quot;Gunma&quot;,&quot;群馬県&quot;],[&quot;Saitama&quot;,&quot;埼玉県&quot;],[&quot;Chiba&quot;,&quot;千葉県&quot;],[&quot;Tōkyō&quot;,&quot;東京都&quot;],[&quot;Kanagawa&quot;,&quot;神奈川県&quot;],[&quot;Niigata&quot;,&quot;新潟県&quot;],[&quot;Toyama&quot;,&quot;富山県&quot;],[&quot;Ishikawa&quot;,&quot;石川県&quot;],[&quot;Fukui&quot;,&quot;福井県&quot;],[&quot;Yamanashi&quot;,&quot;山梨県&quot;],[&quot;Nagano&quot;,&quot;長野県&quot;],[&quot;Gifu&quot;,&quot;岐阜県&quot;],[&quot;Shizuoka&quot;,&quot;静岡県&quot;],[&quot;Aichi&quot;,&quot;愛知県&quot;],[&quot;Mie&quot;,&quot;三重県&quot;],[&quot;Shiga&quot;,&quot;滋賀県&quot;],[&quot;Kyōto&quot;,&quot;京都府&quot;],[&quot;Ōsaka&quot;,&quot;大阪府&quot;],[&quot;Hyōgo&quot;,&quot;兵庫県&quot;],[&quot;Nara&quot;,&quot;奈良県&quot;],[&quot;Wakayama&quot;,&quot;和歌山県&quot;],[&quot;Tottori&quot;,&quot;鳥取県&quot;],[&quot;Shimane&quot;,&quot;島根県&quot;],[&quot;Okayama&quot;,&quot;岡山県&quot;],[&quot;Hiroshima&quot;,&quot;広島県&quot;],[&quot;Yamaguchi&quot;,&quot;山口県&quot;],[&quot;Tokushima&quot;,&quot;徳島県&quot;],[&quot;Kagawa&quot;,&quot;香川県&quot;],[&quot;Ehime&quot;,&quot;愛媛県&quot;],[&quot;Kōchi&quot;,&quot;高知県&quot;],[&quot;Fukuoka&quot;,&quot;福岡県&quot;],[&quot;Saga&quot;,&quot;佐賀県&quot;],[&quot;Nagasaki&quot;,&quot;長崎県&quot;],[&quot;Kumamoto&quot;,&quot;熊本県&quot;],[&quot;Ōita&quot;,&quot;大分県&quot;],[&quot;Miyazaki&quot;,&quot;宮崎県&quot;],[&quot;Kagoshima&quot;,&quot;鹿児島県&quot;],[&quot;Okinawa&quot;,&quot;沖縄県&quot;]'}}
+                  </select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div>
+              </div>
+              <div class="field name-half">
+                <input type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+              </div>
+              <div class="field name-half">
+                <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+              </div>
+              
+              <div class="field">
+                <input type="text" id="AddressZip_{{ form.id }}" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+              </div>
+              <div id="AddressProvinceContainer_{{ form.id }}" style="display:none;" class="form-top1">
+                <label for="AddressProvince_{{ form.id }}" class="form-label">
+                  {{ 'customer.addresses.province' | t }}
+                </label>
+                <div class="select">
+                  <select
+                    id="AddressProvince_{{ form.id }}"
+                    name="address[province]"
+                    data-default="{{ form.province }}"
+                    autocomplete="address-level1"
+                  >
+                  </select>
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <use href="#icon-caret" />
+                  </svg>
+                </div>
+              </div>
+              <div class="field">
+                <input type="text" id="AddressCity_{{ form.id }}" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                <label for="AddressCity_{{ form.id }}">市区町村</label>
+              </div>
+              <div class="field">
+                <input type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                <label for="AddressAddress1_{{ form.id }}">住所</label>
+              </div>
+              <div class="field">
+                <input type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                <label for="AddressAddress2_{{ form.id }}">建物名、部屋番号など（任意）</label>
+              </div>
+
+              <div class="field">
+                <input type="tel" id="AddressPhone_{{ form.id }}"  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+              </div>
+<!--               <div class="field">
+                <input type="text" id="AddressCompany_{{ form.id }}" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+              </div> -->
+              <div>
+                {{ form.set_as_default_checkbox }}
+                <label for="address_default_address_{{ form.id }}">
+                  {{ 'customer.addresses.set_default' | t }}
+                </label>
+              </div>
+              <div>
+                <button class="form-btn100">{{ 'customer.addresses.update' | t }}</button>
+                <button type="reset" class="form-btn100">{{ 'customer.addresses.cancel' | t }}</button>
+              </div>
+            {%- endform -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if paginate.pages > 1 -%}
+      {%- if paginate.parts.size > 0 -%}
+          <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+            <ul role="list">
+            {%- if paginate.previous -%}
+              <li>
+                <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+              <li>
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</a>
+                {%- else -%}
+                  {%- if part.title == paginate.current_page -%}
+                    <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{ part.title }}</span>
+                  {%- else -%}
+                    <span>{{ part.title }}</span>
+                  {%- endif -%}
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+              <li>
+                <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}" >
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+            </ul>
+          </nav>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}
+
+<script>
+  window.onload = () => {
+    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+  }
+</script>

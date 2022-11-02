@@ -1,0 +1,46 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<div class="smoothscroll-top">
+    <img src="https://cdn.shopify.com/s/files/1/0656/4688/7139/files/btn_gototop.png?v=1662537298">
+</div>
+<style>
+.smoothscroll-top{
+    position: absolute;
+    top: -25px;
+    right: -20px;
+    padding: 0px;
+    max-width: 110px;
+}
+.smoothscroll-top img{
+    width: 100%;
+    display: block;
+    animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+    transition: 1.5s ease-in-out;
+}
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-2deg);
+  }
+  50% {
+    transform:translate(0, -4px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(2deg);
+  }
+}
+  @media screen and (min-width: 750px){
+    .smoothscroll-top{
+        top: -55px;
+        right: 0px;
+        max-width: 140px;
+    }
+  }
+</style>
+<script>
+$(function(){
+$('.smoothscroll-top').click(function(){
+var speed = 800;
+$("html, body").animate({scrollTop:0}, speed, "swing");
+return false;
+});
+});
+</script>

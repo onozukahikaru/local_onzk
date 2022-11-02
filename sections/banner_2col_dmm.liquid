@@ -1,0 +1,99 @@
+<div class="banner_2col">
+  <div class="grid__item ">
+      <a href="{{ section.settings.link1 }}" class="">
+        <img src="{{ section.settings.image_box1 | img_url: 'master' }}" alt="{{ section.settings.image_box.alt }}">
+      </a>
+  </div>
+  <div class="grid__item ">
+      <a href="{{ section.settings.link2 }}"  class="">
+        <img src="{{ section.settings.image_box2 | img_url: 'master' }}" alt="{{ section.settings.image_box.alt }}">
+      </a>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "バナー２列",
+  "class": "section_banner2",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_box1",
+      "label": "画像を選ぶ"
+    },
+    {
+      "type": "url",
+      "id": "link1",
+      "label": "URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_box2",
+      "label": "画像を選ぶ"
+    },
+    {
+      "type": "url",
+      "id": "link2",
+      "label": "URL"
+    }
+  ],
+
+"presets": [
+   {
+     "name": "バナー２列",
+     "category": "画像"
+   }
+ ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  .banner_2col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .banner_2col .grid__item{
+      width: 100%;
+      max-width: none;
+      margin: 0 0 7px 0;
+  }
+  .banner_2col a{
+    display: block;
+    position: relative;
+  }
+  .banner_2col img{
+    width: 100%;
+  }
+  .section_banner2{
+    max-width: 280px;
+    margin: 40px auto 0;
+  }
+  @media screen and (min-width: 769px){
+    .banner_2col{
+      flex-direction: row;
+    }
+    .banner_2col .grid__item{
+      width: 50%;
+      padding: 0 5px;
+      margin: 0;
+  }
+    .section_banner2{
+      max-width: 750px;
+      margin-top: 60px;
+    }
+    .banner_2col a:hover::before {
+        content: "";
+        width: 100%;
+        height: 94%;
+        background: rgba(255,255,255,.2);
+        display: block;
+        position: absolute;
+        z-index: 3;
+        border-radius: 10px;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

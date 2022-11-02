@@ -24,7 +24,7 @@
                   {{ article.image | image_url }} {{ article.image.width }}w"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
                 src="{{ article.image | image_url: width: 1100 }}"
-                loading="eager"
+                loading="lazy"
                 width="{{ article.image.width }}"
                 height="{{ article.image.height }}"
                 alt="{{ article.image.alt | escape }}">
@@ -34,19 +34,36 @@
 
         {%- when 'title'-%}
           <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
+
+          {% for tag in article.tags %}
+            {% if tag contains "label_" %}
+              <span class="label_tags{% if tag contains "女性用" %} label_female{% endif %}{% if tag contains "男女兼用" %} label_unisex{% endif %}{% if tag contains "男性用" %} label_male{% endif %}">{{ tag | remove: "label_" }}</span>
+            {% endif %}
+          {% endfor %}
+          {%- if block.settings.blog_show_date -%}
+            <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | date: "%Y/%m/%d" }}</span>
+          {%- endif -%}
             <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-            {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
+            
             {%- if block.settings.blog_show_author -%}
               <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <span itemprop="name">{{ article.author }}</span>
               </span>
             {%- endif -%}
+            {%- if template == 'article.comic'-%}
+                <p class="article-card__excerpt rte-width">
+                  {%- if article.excerpt.size > 0 -%}
+                    {{ article.excerpt | strip_html | truncatewords: 30 }}
+                  {%- else -%}
+                    {{ article.content | strip_html | truncatewords: 30 }}
+                  {%- endif -%}
+                </p>
+            {%- endif -%}
           </header>
 
         {%- when 'content'-%}
           <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{ block.shopify_attributes }}>
+              {% render 'newtag', article: article %}
               {{ article.content }}
           </div>
 
@@ -91,12 +108,12 @@
           </div>
     {%- endcase -%}
   {%- endfor -%}
-
-  <div class="article-template__back element-margin-top center">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
-    </a>
+  <div class="seemore_box">
+    <div class="article-template__back element-margin-top center seemore">
+      <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+        {% render 'icon-arrow-wh_dmm' %}
+      </a>
+    </div>
   </div>
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
@@ -120,7 +137,7 @@
                 <article id="{{ comment.id }}" class="article-template__comments-comment">
                   {{ comment.content }}
                   <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span><span class="caption-with-letter-spacing">{{ comment.created_at | time_tag: format: 'date' }}</span>
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span><span class="caption-with-letter-spacing">{{ comment.created_at | date: "%Y/%m/%d" }}</span>
                   </footer>
                 </article>
               {%- endfor -%}
