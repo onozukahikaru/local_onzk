@@ -68,7 +68,7 @@
         "18dce226-6492-47cb-8de3-e38b1c8e3a17"
       ],
       "settings": {
-        "image_box1": "shopify:\/\/shop_images\/title_howto_pc.png",
+        "image_box1": "shopify:\/\/shop_images\/use_pc.png",
         "image_box2": "shopify:\/\/shop_images\/title_howto.png"
       }
     },
@@ -88,8 +88,6 @@
       "type": "lunaletter_dmm",
       "disabled": true,
       "settings": {
-        "image_box1": "shopify:\/\/shop_images\/title_letter_pc.png",
-        "image_box2": "shopify:\/\/shop_images\/title_letter_sp.png",
         "description": "<p>女性の皆さまにためになる情報を<\/p><p><strong>Lunaレター<\/strong>でお届けしています。<\/p>",
         "blog": "letter",
         "show_image": true,
